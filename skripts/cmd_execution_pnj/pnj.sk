@@ -1,5 +1,5 @@
 options:
-    prefix: &bDeltacube &8» &r
+    prefix: &b[SERVER] &8» &r
 
 # Commande pour créer un PNJ avec un nom et une commande à exécuter
 command /pnj <text> <text>:
