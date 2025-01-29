@@ -1,0 +1,50 @@
+options:
+    prefix: &bDeltacube &8» &r
+
+# Commande pour créer un PNJ avec un nom et une commande à exécuter
+command /pnj <text> <text>:
+    permission: admin.pnj
+    usage: {@prefix}Utilisez &a/pnj <Nom du PNJ> <Commande>&r pour créer un PNJ.
+    trigger:
+        set {_name} to arg-1
+        set {_command} to arg-2
+        spawn a villager at player's location
+        set {_villager} to last spawned entity
+        set name of {_villager} to {_name}
+        {_villager}.setAI(false)
+        {_villager}.setInvulnerable(false)
+        set {pnj.%uuid of {_villager}%} to {_command} # Associe l'UUID du PNJ à la commande
+        send "{@prefix}&aLe PNJ &b%{_name}%&a a été créé avec succès et est prêt à exécuter la commande : &b%{_command}%&a." to player
+
+# Événement déclenché lorsqu'un joueur clique droit sur un PNJ
+on right click on villager:
+    set {_uuid} to uuid of event-entity
+    if {pnj.%{_uuid}%} is set:
+        if player has permission "admin.pnj":
+            if player's tool is name tag: # Si le joueur tient un name tag
+                set {_new-name} to the name of the player's tool
+                set name of event-entity to {_new-name}
+                send "{@prefix}&aLe PNJ a été renommé en &b%{_new-name}%&a." to player
+                cancel event
+                stop
+            if player's tool is bedrock: # Si le joueur tient de la bedrock
+                set {_new-command} to the name of the player's tool
+                set {pnj.%{_uuid}%} to {_new-command}
+                send "{@prefix}&aLa commande du PNJ a été mise à jour : &b%{_new-command}%&a." to player
+                cancel event
+                stop
+        # Exécution normale pour les autres joueurs
+        set {_command} to {pnj.%{_uuid}%}
+        cancel event
+        execute player command "%{_command}%" 
+
+# Événement déclenché lorsqu'un joueur inflige des dégâts à un PNJ
+on damage of villager:
+    if attacker has permission "admin.pnj": # Vérifie si l'attaquant a la permission
+        set {_uuid} to uuid of victim
+        delete {pnj.%{_uuid}%}
+        send "{@prefix}&cVous avez tué le PNJ." to attacker
+        kill victim
+    else:
+        cancel event
+        send "{@prefix}&cVous n'avez pas la permission pour tuer ce PNJ !" to attacker

@@ -1,0 +1,30 @@
+options:
+    prefix: &b[SERVER] &8» &r
+
+command /nightvision:
+    aliases: /nv
+    permission: nightvision
+    trigger:
+        if {nv-%event-player's uuid%} is set:
+            remove night vision from the player
+            send "{@prefix}&cTu n'as plus la vision nocturne." to player
+            delete {nv-%event-player's uuid%}
+            stop
+        if {nv-%event-player's uuid%} is not set:
+            apply infinite night vision 2 without particles to player
+            send "{@prefix}&aTu as maintenant la vision nocturne." to player
+            set {nv-%event-player's uuid%} to true
+            stop
+
+on join:
+    if {nv-%event-player's uuid%} is set:
+        apply infinite night vision 2 without particles to player
+
+on respawn:
+    if {nv-%event-player's uuid%} is set:
+        wait 1 seconds
+        apply infinite night vision 2 without particles to player
+
+on join:
+    if player does not have permission "nightvision":
+        delete {nv-%event-player's uuid%}

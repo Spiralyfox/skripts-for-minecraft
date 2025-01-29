@@ -1,0 +1,45 @@
+📌 Comment utiliser ce Skript ?  
+
+Ce Skript permet de créer des PNJ qui, lorsqu'on clique dessus, font exécuter une commande au joueur, comme s'il l'avait tapée dans le chat.  
+
+🔹 Créer un PNJ  
+Utilisez la commande :  
+`/pnj <Nom du PNJ> <Commande>`  
+Exemple : `/pnj Boutique shop`  
+Cela créera un PNJ nommé "Boutique". Quand un joueur cliquera dessus, il exécutera `/shop` automatiquement.  
+
+🔹 Utilisation des PNJ  
+- Un simple clic droit sur le PNJ exécute la commande pour le joueur.  
+- Seuls les joueurs avec la permission `admin.pnj` peuvent modifier ou supprimer un PNJ.  
+
+🔹 Modifier un PNJ  
+- Si un administrateur clique sur un PNJ en tenant une étiquette (name tag), il peut le renommer avec le texte de l’étiquette.  
+- Si un administrateur clique sur un PNJ en tenant de la bedrock, il peut modifier la commande associée.  
+
+🔹 Supprimer un PNJ  
+- Un administrateur peut supprimer un PNJ en l’attaquant.  
+- Les autres joueurs ne peuvent pas attaquer les PNJ.  
+
+---  
+
+📌 How to use this Skript?  
+
+This Skript allows you to create NPCs that, when clicked, make the player execute a command as if they had typed it themselves.  
+
+🔹 Create an NPC  
+Use the command:  
+`/pnj <NPC Name> <Command>`  
+Example: `/pnj Shop shop`  
+This will create an NPC named "Shop". When a player right-clicks it, they will automatically execute `/shop`.  
+
+🔹 Using NPCs  
+- Right-clicking the NPC executes the command for the player.  
+- Only players with the `admin.pnj` permission can modify or delete an NPC.  
+
+🔹 Edit an NPC  
+- If an admin right-clicks an NPC while holding a name tag, they can rename it using the text on the tag.  
+- If an admin right-clicks an NPC while holding bedrock, they can change its associated command.  
+
+🔹 Delete an NPC  
+- An admin can delete an NPC by attacking it.  
+- Other players cannot attack NPCs.  
