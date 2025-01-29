@@ -1,0 +1,29 @@
+📌 Comment utiliser ce Skript ?  
+
+Ce Skript permet aux joueurs d'activer ou de désactiver la vision nocturne en utilisant la commande `/nightvision` ou `/nv`. La vision nocturne s'applique sans particules et reste active même après un redémarrage ou une résurrection, tant que l'option n'est pas désactivée.  
+
+🔹 Activer/Désactiver la vision nocturne  
+Utilisez la commande :  
+`/nightvision` ou `/nv`  
+- Si vous avez déjà la vision nocturne, la commande la désactive et vous informe que vous n'avez plus la vision nocturne.  
+- Si vous n'avez pas la vision nocturne, la commande l'active pour vous et vous informe que vous avez maintenant la vision nocturne.  
+
+🔹 Vision nocturne persistante  
+- Si un joueur a activé la vision nocturne, elle sera automatiquement réappliquée à chaque fois qu'il rejoint le serveur ou respawn.  
+- Si un joueur quitte le serveur sans avoir la permission `nightvision`, la vision nocturne sera supprimée de son profil.  
+
+---  
+
+📌 How to use this Skript?  
+
+This Skript allows players to toggle night vision on or off using the `/nightvision` or `/nv` command. The night vision applies without particles and remains active even after a respawn or reconnect, unless turned off.  
+
+🔹 Toggle Night Vision  
+Use the command:  
+`/nightvision` or `/nv`  
+- If you already have night vision, the command will turn it off and notify you that you no longer have night vision.  
+- If you don't have night vision, the command will apply it to you and notify you that you now have night vision.  
+
+🔹 Persistent Night Vision  
+- If a player has night vision activated, it will automatically be reapplied every time they join the server or respawn.  
+- If a player leaves the server without having the `nightvision` permission, the night vision will be removed from their profile.  
